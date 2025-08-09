@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Education Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduLearn</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> My Courses</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Transform Your Learning Experience</h1>
+            <p>Access scheduled lessons, study materials, and AI-generated practice questions all in one place</p>
+            <button class="btn btn-primary"><i class="fas fa-rocket"></i> Get Started</button>
+        </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="tabs">
+        <div class="container">
+            <ul class="tab-buttons">
+                <li><button class="tab-btn active" data-tab="lessons"><i class="fas fa-calendar-alt"></i> Scheduled Lessons</button></li>
+                <li><button class="tab-btn" data-tab="notes"><i class="fas fa-file-alt"></i> Study Notes</button></li>
+                <li><button class="tab-btn" data-tab="videos"><i class="fas fa-video"></i> Video Library</button></li>
+                <li><button class="tab-btn" data-tab="ai"><i class="fas fa-robot"></i> AI Practice Questions</button></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Scheduled Lessons Tab -->
+            <div class="tab-content active" id="lessons-content">
+                <div class="section-header">
+                    <h2 class="section-title">Scheduled Lessons</h2>
+                    <div class="controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="lesson-search" placeholder="Search lessons...">
+                        </div>
+                        <select id="subject-filter">
+                            <option value="all">All Subjects</option>
+                            <option value="math">Mathematics</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="biology">Biology</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cards-grid" id="lessons-grid">
+                    <!-- Lesson cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Study Notes Tab -->
+            <div class="tab-content" id="notes-content">
+                <div class="section-header">
+                    <h2 class="section-title">Study Notes</h2>
+                    <div class="controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="note-search" placeholder="Search notes...">
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-grid" id="notes-grid">
+                    <!-- Note cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Video Library Tab -->
+            <div class="tab-content" id="videos-content">
+                <div class="section-header">
+                    <h2 class="section-title">Video Library</h2>
+                    <div class="controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="video-search" placeholder="Search videos...">
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-grid" id="videos-grid">
+                    <!-- Video cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- AI Practice Questions Tab -->
+            <div class="tab-content" id="ai-content">
+                <div class="section-header">
+                    <h2 class="section-title">AI Practice Questions</h2>
+                    <div class="controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="ai-search" placeholder="Search questions...">
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-grid" id="ai-grid">
+                    <!-- AI questions will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Complete Payment</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="lesson-summary">
+                <h4 class="lesson-title" id="modal-lesson-title">Lesson Title</h4>
+                <p class="lesson-instructor" id="modal-lesson-instructor">Instructor Name</p>
+                <div class="lesson-meta">
+                    <span id="modal-lesson-date">Date</span>
+                    <span class="card-price" id="modal-lesson-price">$0</span>
+                </div>
+            </div>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" class="form-control" placeholder="123">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-pay"><i class="fas fa-credit-card"></i> Pay Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
