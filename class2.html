@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIKIZO - Learning for Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+      
+       <style>
+         :root {
+            --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+          .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: black;
+        }
+        .nav-link.active {
+            color: black !important;
+            font-weight: 600;
+        }
+        
+        .nav-link:hover {
+            color: #2575fc !important;
+            transform: translateY(-2px);
+        }
+        
+     .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+            color: white;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-custom {
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--primary-gradient);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 60vh;
+                text-align: center;
+            }
+            
+            .education-card {
+                margin-bottom: 20px;
+            }
+        }
+    
+        </style>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">LIKIZO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="images/high (6).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="images/high (7).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="images/high (1).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="images/high (5).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-4">LIKIZO</h3>
+                    <p>Your comprehensive educational partner for all levels of learning - from foundational basics to advanced research.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon bg-primary me-2"><i class="bi bi-facebook text-white"></i></a>
+                        <a href="#" class="social-icon bg-info me-2"><i class="bi bi-twitter text-white"></i></a>
+                        <a href="#" class="social-icon bg-danger me-2"><i class="bi bi-instagram text-white"></i></a>
+                        <a href="#" class="social-icon bg-primary"><i class="bi bi-linkedin text-white"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Education Levels</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Primary Schools</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">High Schools</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Colleges</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Universities</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Education Street</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +1 234 567 8900</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@likizo.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 LIKIZO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

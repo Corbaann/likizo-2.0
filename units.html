@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Platform</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #4cc9f0;
+      --light-bg: #f8f9fa;
+      --dark-text: #212529;
+      --light-text: #6c757d;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+    }
+    nav {
+      background-color: var(--primary-color);
+      padding: 1rem;
+    }
+    .navbar {
+     background-color: var( --accent-color);
+      padding: 1rem;
+    }
+    .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: var( --secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+         .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: black;
+        }
+        .nav-link.active {
+            color: black !important;
+            font-weight: 600;
+        }
+        
+        .nav-link:hover {
+            color: #2575fc !important;
+            transform: translateY(-2px);
+        }
+   
+
+    .header-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-title {
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .header-subtitle {
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .unit-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .unit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(67, 97, 238, 0.15);
+      border-color: var(--accent-color);
+    }
+
+    .unit-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(67, 97, 238, 0.1);
+      border-radius: 10px;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    .unit-content {
+      padding: 1.5rem;
+    }
+
+    .unit-title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .unit-description {
+      color: var(--light-text);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .select-btn {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .select-btn:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .selected-unit {
+      border: 2px solid var(--accent-color);
+      background-color: rgba(76, 201, 240, 0.05);
+    }
+
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1050;
+    }
+
+    @media (max-width: 768px) {
+      .unit-card {
+        flex-direction: column;
+      }
+      
+      .unit-icon {
+        margin: 0 auto 1rem;
+      }
+      
+      .unit-content {
+        text-align: center;
+        padding: 1.5rem;
+      }
+      
+      .unit-description {
+        text-align: center;
+      }
+      
+      .select-btn {
+        width: 100%;
+      }
+    }
+    .footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand " href="#"><h2>LIKIZO</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <div id="root"></div>
+
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const unitsData = [
+      {
+        id: 1,
+        title: "Unit 1: Introduction to Algebra",
+        description: "Learn the basics of equations and variables.",
+        icon: "bi-calculator"
+      },
+      {
+        id: 2,
+        title: "Unit 2: Biology Fundamentals",
+        description: "Explore cells, genetics, and evolution.",
+        icon: "bi-layers"
+      },
+      {
+        id: 3,
+        title: "Unit 3: World History",
+        description: "Journey through ancient civilizations to modern times.",
+        icon: "bi-globe-americas"
+      },
+      {
+        id: 4,
+        title: "Unit 4: Introduction to Programming",
+        description: "Understand the basics of coding with Python.",
+        icon: "bi-code-slash"
+      },
+      {
+        id: 5,
+        title: "Unit 5: Organic Chemistry",
+        description: "Study the structure and reactions of organic compounds.",
+        icon: "bi-atom"
+      },
+      {
+        id: 6,
+        title: "Unit 6: Creative Writing",
+        description: "Develop your storytelling and narrative techniques.",
+        icon: "bi-pencil"
+      }
+    ];
+
+    function App() {
+      const [selectedUnit, setSelectedUnit] = useState(null);
+      const [showToast, setShowToast] = useState(false);
+      const [toastMessage, setToastMessage] = useState("");
+
+      const handleSelectUnit = (unit) => {
+        setSelectedUnit(unit.id);
+        setToastMessage(`You selected ${unit.title}`);
+        setShowToast(true);
+        
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+          setShowToast(false);
+        }, 3000);
+      };
+
+      return (
+        <div className="container-fluid px-0">
+          {/* Header Section */}
+         
+
+          {/* Unit Selection Interface */}
+          <main className="container py-4">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                {unitsData.map((unit) => (
+                  <div 
+                    key={unit.id} 
+                    className={`unit-card mb-4 p-3 d-flex align-items-center ${selectedUnit === unit.id ? 'selected-unit' : ''}`}
+                  >
+                    <div className="unit-icon me-3">
+                      <i className={`bi ${unit.icon}`}></i>
+                    </div>
+                    <div className="unit-content flex-grow-1">
+                      <h3 className="unit-title">{unit.title}</h3>
+                      <p className="unit-description">{unit.description}</p>
+                      <button 
+                        className="btn select-btn"
+                        onClick={() => handleSelectUnit(unit)}
+                      >
+                        Select Unit
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </main>
+
+          {/* Toast Notification */}
+          {showToast && (
+            <div className="toast-container">
+              <div className="toast show" role="alert">
+                <div className="toast-header">
+                  <strong className="me-auto">Learning Platform</strong>
+                  <small>Just now</small>
+                  <button 
+                    type="button" 
+                    className="btn-close" 
+                    onClick={() => setShowToast(false)}
+                  ></button>
+                </div>
+                <div className="toast-body">
+                  {toastMessage}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+    
+  </script>
+  <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-4">LIKIZO</h3>
+                    <p>Your comprehensive educational partner for all levels of learning - from foundational basics to advanced research.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon bg-primary me-2"><i class="bi bi-facebook text-white"></i></a>
+                        <a href="#" class="social-icon bg-info me-2"><i class="bi bi-twitter text-white"></i></a>
+                        <a href="#" class="social-icon bg-danger me-2"><i class="bi bi-instagram text-white"></i></a>
+                        <a href="#" class="social-icon bg-primary"><i class="bi bi-linkedin text-white"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Education Levels</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Primary Schools</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">High Schools</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Colleges</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white">Universities</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Education Street</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +1 234 567 8900</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@likizo.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 LIKIZO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
