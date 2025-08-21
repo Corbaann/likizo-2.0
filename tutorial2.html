@@ -1,15 +1,15 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIKIZO - Education Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>LLikizo - Tutorials</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
-         :root {
+       
+        :root {
             --primary-color: #4361ee;
             --secondary-color: #3f37c9;
             --accent-color: #4cc9f0;
@@ -25,7 +25,11 @@
             --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
         }
-        body {
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
             color: var(--dark-color);
@@ -53,76 +57,13 @@
             color: white !important;
             transform: translateY(-2px);
         }
- .course-card .card-body {
-            padding: 25px;
-            background-color: white;
+        .container {
+            margin-top: 50px;
         }
-
-        .course-card .card-body i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .unit-card {
-            border: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-            height: 100%;
-        }
-
-        .unit-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transform: scale(1.03);
-        }
-
-        .unit-card .card-body {
-            padding: 20px;
-        }
-
-        .unit-card .card-title {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-
-        .unit-card .card-text {
-            color: #666;
-            font-size: 0.95rem;
+        .card {
             margin-bottom: 20px;
         }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border: none;
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            color: white;
-            font-size: 1.8rem;
-        }
-
-       .footer {
+         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
             color: white;
         }
@@ -183,10 +124,9 @@
             }
         }
     </style>
-    </head>
+</head>
 <body>
-    
-<nav class="navbar navbar-expand-lg navbar-dark">
+   <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="bi bi-book"></i> LIKIZO
@@ -197,91 +137,133 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
+                        <a class="nav-link" href="#"><i class="bi bi-house-door"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes.html"><i class="bi bi-mortarboard"></i> Classes</a>
+                        <a class="nav-link" href="#"><i class="bi bi-mortarboard"></i> Courses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="bi bi-file-earmark-text"></i> Notes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tutorial2.html"><i class="bi bi-camera-video"></i> Tutorials</a>
+                        <a class="nav-link" href="#"><i class="bi bi-camera-video"></i> Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="chose.html"><i class="bi bi-question-circle"></i> Questions</a>
+                        <a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Tutorials</a>
                     </li>
-                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-person"></i> Profile</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-<section class="container my-5">
-        <div class="selection-header">
-            <h2 class="section-title">Select Your Unit</h2>
-            <p class="text-muted">Choose the specific unit you want to explore. Current course: <span id="currentCourse" class="fw-bold">Computer Science</span></p>
-        </div>
-
+    <div class="container">
+        <h2>Select Tutorials</h2>
         <div class="row">
-            <!-- Unit 1 -->
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card unit-card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-journal-text"></i>
-                        </div>
-                        <h4 class="card-title">FORM 1</h4>
-                        <p class="card-text">Fundamentals of programming logic, variables, loops, and basic data structures.</p>
-                       <a href="chose.html"><button class="btn btn-primary">Available Classes</button></a> 
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/CRE.jpg" class="card-img-top" alt="Tutorial 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to HTML</h5>
+                        <p class="card-text">Learn the basics of HTML and how to structure your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Unit 2 -->
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card unit-card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                           <i class="bi bi-journal-text"></i>
-                        </div>
-                        <h4 class="card-title">FORM 2</h4>
-                        <p class="card-text">Comprehensive classes on arrays, linked lists, trees, and graphs implementation.</p>
-                        <button class="btn btn-primary">Available Classes</button>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 2">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Fundamentals</h5>
+                        <p class="card-text">Discover how to style your web pages with CSS.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Unit 3 -->
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card unit-card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                           <i class="bi bi-journal-text"></i>
-                        </div>
-                        <h4 class="card-title">FORM 3</h4>
-                        <p class="card-text">Step-by-step tutorials on sorting, searching, and optimization algorithms.</p>
-                        <button class="btn btn-primary">Available Classes </button>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 3">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Basics</h5>
+                        <p class="card-text">Get started with JavaScript and learn to add interactivity to your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Unit 4 -->
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card unit-card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-journal-text"></i>
-                        </div>
-                        <h4 class="card-title">FORM 4</h4>
-                        <p class="card-text">Notes on relational databases, SQL queries, normalization, and design principles.</p>
-                        <button class="btn btn-primary">Available Classes </button>
+        </div>
+    </div>
+     <div class="container">
+        <h2>Select Tutorials</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to HTML</h5>
+                        <p class="card-text">Learn the basics of HTML and how to structure your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
                     </div>
                 </div>
             </div>
-              </section>
-            
-
-             <footer class="footer py-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 2">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Fundamentals</h5>
+                        <p class="card-text">Discover how to style your web pages with CSS.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 3">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Basics</h5>
+                        <p class="card-text">Get started with JavaScript and learn to add interactivity to your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="container">
+        <h2>Select Tutorials</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to HTML</h5>
+                        <p class="card-text">Learn the basics of HTML and how to structure your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 2">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Fundamentals</h5>
+                        <p class="card-text">Discover how to style your web pages with CSS.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Tutorial 3">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Basics</h5>
+                        <p class="card-text">Get started with JavaScript and learn to add interactivity to your web pages.</p>
+                        <a href="#" class="btn btn-primary">Watch Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer class="footer py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -327,6 +309,9 @@
             </div>
         </div>
     </footer>
+    
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
