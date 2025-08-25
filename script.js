@@ -42,7 +42,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
     alert("Logged in successfully!");
-    window.location.href = "dashboard.html"; // Redirect to dashboard
+    window.location.href = "level.html"; // Redirect to dashboard
   } catch (error) {
     alert("Error: " + error.message);
   }
@@ -69,7 +69,7 @@ async function signInWithGoogle() {
   try {
     await auth.signInWithPopup(provider);
     alert("Signed in with Google!");
-    window.location.href = "dashboard.html";
+    window.location.href = "level.html";
   } catch (error) {
     alert("Error: " + error.message);
   }

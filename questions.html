@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="files/css/bootstrap.css">
     <style>
-        :root {
+  :root {
             --primary-color: #4361ee;
             --secondary-color: #3f37c9;
             --accent-color: #4cc9f0;
@@ -18,19 +19,24 @@
             --success-color: #4caf50;
             --warning-color: #ff9800;
             --danger-color: #f44336;
-        }
-          :root {
             --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
             --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+           --bs-info-border-subtle: rgba(66, 165, 245, 0.1);
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: var(--dark-color);
+         
+        .p-3{
+            background-color: var(--primary-color);
         }
+        .p-3:hover{
+            background-color: var(--success-color);
+              transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        
 
         .navbar {
            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
@@ -45,7 +51,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 500;
@@ -57,49 +62,7 @@
             transform: translateY(-2px);
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-weight: 800;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        .course-card {
+         .course-card {
             border: none;
             border-radius: 12px;
             overflow: hidden;
@@ -107,7 +70,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 25px;
             height: 100%;
-            
         }
 
         .course-card:hover {
@@ -133,149 +95,7 @@
             margin-bottom: 15px;
             color: var(--primary-color);
         }
-
-        .unit-card {
-            border: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-            height: 100%;
-        }
-
-        .unit-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transform: scale(1.03);
-        }
-
-        .unit-card .card-body {
-            padding: 20px;
-        }
-
-        .unit-card .card-title {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-
-        .unit-card .card-text {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border: none;
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            color: white;
-            font-size: 1.8rem;
-        }
-
         .footer {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: white;
-            padding: 40px 0 20px;
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background-color: white;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .course-icon {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .breadcrumb-custom {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            padding: 15px 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .breadcrumb-item a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .breadcrumb-item.active {
-            color: var(--secondary-color);
-        }
-
-        .selection-header {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-section p {
-                font-size: 1rem;
-            }
-            
-            .course-card .card-header {
-                padding: 15px;
-                font-size: 1.1rem;
-            }
-            
-            .unit-card .card-body {
-                padding: 15px;
-            }
-        }
-         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
             color: white;
         }
@@ -335,11 +155,11 @@
                 margin-bottom: 20px;
             }
         }
-    </style>
-</head>
+
+        </style>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+   <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="bi bi-book"></i> LIKIZO
@@ -349,49 +169,49 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-house-door"></i> Home</a>
+                   
+                   <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-mortarboard"></i> Courses</a>
+                        <a class="nav-link" href="classes.html"><i class="bi bi-mortarboard"></i> Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-file-earmark-text"></i> Notes</a>
+                        <a class="nav-link" href="notes.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-camera-video"></i> Classes</a>
+                        <a class="nav-link" href="tutorial2.html"><i class="bi bi-camera-video"></i> Tutorials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Tutorials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-person"></i> Profile</a>
+                        <a class="nav-link" href="questions.html"><i class="bi bi-question-circle"></i> Questions</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    
-
-    <!-- Breadcrumb -->
-    <div class="container mt-4">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Courses</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Resources</li>
-            </ol>
-        </nav>
-    </div>
-
-    <!-- Course Selection -->
+ <!-- Course Selection -->
     <section class="container my-5">
         <div class="selection-header">
-            <h2 class="section-title">Select Your Course</h2>
+            <h1 class="section-title">Select Unit</h1>
             <p class="text-muted">Choose from our wide range of courses to access learning materials</p>
         </div>
+        <div class="container text-center m-4">
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 m-3 ">
+    <div class="col">
+     <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+       <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+</div>
+   
+</div>
 
         <div class="row">
             <!-- Course 1 -->
@@ -399,7 +219,7 @@
                 <div class="card course-card">
                     <div class="card-header">
                         <i class="bi bi-code-slash course-icon"></i>
-                        <h3 class="mb-0">Computer Science</h3>
+                        <h3 class="mb-0">Chemistry</h3>
                     </div>
                     <div class="card-body">
                         <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
@@ -413,7 +233,7 @@
                 <div class="card course-card">
                     <div class="card-header">
                         <i class="bi bi-calculator course-icon"></i>
-                        <h3 class="mb-0">Mathematics</h3>
+                        <h3 class="mb-0">Biology</h3>
                     </div>
                     <div class="card-body">
                         <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
@@ -442,7 +262,7 @@
                 <div class="card course-card">
                     <div class="card-header">
                         <i class="bi bi-code-slash course-icon"></i>
-                        <h3 class="mb-0">Computer Science</h3>
+                        <h3 class="mb-0">Mathematics</h3>
                     </div>
                     <div class="card-body">
                         <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
@@ -450,9 +270,81 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Course 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <i class="bi bi-calculator course-icon"></i>
+                        <h3 class="mb-0">Mathematics</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
+                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <i class="bi bi-lightbulb course-icon"></i>
+                        <h3 class="mb-0">History</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">In-depth resources on mechanics, thermodynamics, electromagnetism, and quantum physics.</p>
+                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <!-- Course 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <i class="bi bi-code-slash course-icon"></i>
+                        <h3 class="mb-0">Geography</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
+                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <i class="bi bi-calculator course-icon"></i>
+                        <h3 class="mb-0">Computer</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
+                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <i class="bi bi-lightbulb course-icon"></i>
+                        <h3 class="mb-0">Business</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">In-depth resources on mechanics, thermodynamics, electromagnetism, and quantum physics.</p>
+                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="footer py-5">
+              <footer class="footer py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -499,9 +391,6 @@
         </div>
     </footer>
     <script src="files/js/bootstrap.js"></script>
-    <!-- Unit Selection -->
-    
-            </body>
-            </html>
-
-            <!--
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     </body>
+</html>
