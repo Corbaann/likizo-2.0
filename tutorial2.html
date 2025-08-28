@@ -26,16 +26,14 @@
             --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
         }
-       body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
+      
          body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
             color: var(--dark-color);
              overflow-x: hidden;
         }
+        
 
         .navbar {
            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
@@ -61,6 +59,44 @@
             color: white !important;
             transform: translateY(-2px);
         }
+         .hero-section {
+            min-height: 70vh;
+            min-width: 90%;
+              background: url('images/view\ tutorials.jpg') no-repeat center center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            color: black;
+           
+        }
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+           
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
+        
+         .p-3{
+            background-color: var( --accent-color);
+             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+        }
+        .p-3:hover{
+            background-color: var(--success-color);
+              transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
         .container {
             margin-top: 50px;
         }
@@ -159,6 +195,34 @@
             </div>
         </div>
     </nav>
+       <section class="hero-section d-flex align-items-center">
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave"></div>
+        
+    </section>
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 m-3 ">
+    <div class="col">
+     <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+       <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+    <div class="col">
+      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
+    </div>
+</div>
+   
+</div>
     <div class="container">
         <h2>Select Tutorials</h2>
         <div class="row">

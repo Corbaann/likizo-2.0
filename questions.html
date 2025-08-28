@@ -61,6 +61,39 @@
             color: white !important;
             transform: translateY(-2px);
         }
+                   .hero-section {
+            min-height: 70vh;
+            min-width: 90%;
+              background: url('images/revision.jpg') no-repeat center center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            color: black;
+           
+        }
+         
+         .p-3{
+            background-color: var( --accent-color);
+             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+        }
+       
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+           
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
 
          .course-card {
             border: none;
@@ -159,8 +192,8 @@
         </style>
 <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <i class="bi bi-book"></i> LIKIZO
             </a>
@@ -169,7 +202,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                   
                    <li class="nav-item">
                         <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
                     </li>
@@ -190,12 +222,18 @@
         </div>
     </nav>
  <!-- Course Selection -->
-    <section class="container my-5">
-        <div class="selection-header">
-            <h1 class="section-title">Select Unit</h1>
-            <p class="text-muted">Choose from our wide range of courses to access learning materials</p>
+   <section class="hero-section d-flex align-items-center">
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container text-center m-4">
+        <div class="hero-wave"></div>
+        
+    </section>
 <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 m-3 ">
     <div class="col">
      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
