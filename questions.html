@@ -1,16 +1,13 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIKIZO - Education Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>StudyHub - Download Study Notes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="files/css/bootstrap.css">
     <style>
-  :root {
+         :root {
             --primary-color: #4361ee;
             --secondary-color: #3f37c9;
             --accent-color: #4cc9f0;
@@ -19,25 +16,20 @@
             --success-color: #4caf50;
             --warning-color: #ff9800;
             --danger-color: #f44336;
+        }
+ :root {
             --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
             --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-           --bs-info-border-subtle: rgba(66, 165, 245, 0.1);
         }
-         
-        .p-3{
-            background-color: var(--primary-color);
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
-        .p-3:hover{
-            background-color: var(--success-color);
-              transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        
-        
-
         .navbar {
            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -51,6 +43,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 500;
@@ -61,7 +54,7 @@
             color: white !important;
             transform: translateY(-2px);
         }
-                   .hero-section {
+          .hero-section{
             min-height: 70vh;
             min-width: 90%;
               background: url('images/revision.jpg') no-repeat center center;
@@ -72,61 +65,94 @@
             color: black;
            
         }
-         
-         .p-3{
-            background-color: var( --accent-color);
-             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+        .container {
+            display: flex;
+            margin: 20px;
         }
-       
-        
-        .hero-content {
-            z-index: 2;
-            position: relative;
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
         }
-        
-        .hero-wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-           
-            background-size:cover;
-            background-repeat: no-repeat;
-        }
-
-         .course-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 25px;
-            height: 100%;
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .course-card .card-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            font-weight: 600;
-            padding: 20px 15px;
-        }
-
-        .course-card .card-body {
-            padding: 25px;
-            background-color: white;
-        }
-
-        .course-card .card-body i {
-            font-size: 2.5rem;
+        .sidebar h3 {
             margin-bottom: 15px;
-            color: var(--primary-color);
+            color: #007BFF;
+        }
+        .sidebar .filter-option {
+            margin-bottom: 10px;
+        }
+        .sidebar .filter-option label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .sidebar .filter-option select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .main-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card .icon {
+            font-size: 48px;
+            color: #007BFF;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+        }
+        .card .details {
+            padding: 20px;
+        }
+        .card .details h4 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .card .details p {
+            margin: 0 0 15px;
+            color: #555;
+        }
+        .card .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card .download-btn:hover {
+            background-color: #0066CC;
+        }
+        .empty-state {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .empty-state img {
+            max-width: 100%;
+            height: auto;
+        }
+        .empty-state p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
         }
         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
@@ -177,22 +203,19 @@
             border-radius: 2px;
             background: var(--primary-gradient);
         }
-        
         @media (max-width: 768px) {
-            .hero-section {
-                min-height: 60vh;
-                text-align: center;
+            .container {
+                flex-direction: column;
             }
-            
-            .education-card {
+            .sidebar {
+                margin-right: 0;
                 margin-bottom: 20px;
             }
         }
-
-        </style>
+    </style>
+</head>
 <body>
-    <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+   <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <i class="bi bi-book"></i> LIKIZO
@@ -203,13 +226,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
+                        <a class="nav-link" href="level.html"><i class="bi bi-house-door"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="classes.html"><i class="bi bi-mortarboard"></i> Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notes.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
+                        <a class="nav-link" href="download.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tutorial2.html"><i class="bi bi-camera-video"></i> Tutorials</a>
@@ -221,8 +244,7 @@
             </div>
         </div>
     </nav>
- <!-- Course Selection -->
-   <section class="hero-section d-flex align-items-center">
+     <section class="hero-section d-flex align-items-center">
         <div class="container hero-content">
             <div class="row">
                 <div class="col-lg-8">
@@ -234,155 +256,104 @@
         <div class="hero-wave"></div>
         
     </section>
-<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 m-3 ">
-    <div class="col">
-     <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
-    </div>
-    <div class="col">
-      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
-    </div>
-    <div class="col">
-       <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> <div class="p-3 rounded ">Form 1</div></a>
-    </div>
-    <div class="col">
-      <a href="unit3.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover "> <div class="p-3 rounded ">Form 1</div></a>
-    </div>
-</div>
-   
-</div>
-
-        <div class="row">
-            <!-- Course 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-code-slash course-icon"></i>
-                        <h3 class="mb-0">Chemistry</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Filter Notes</h3>
+            <div class="filter-option">
+                <label for="subject">Subject:</label>
+                <select id="subject" class="form-control">
+                    <option value="">All Subjects</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="biology">Biology</option>
+                    <option value="computer-science">Computer Science</option>
+                      <option value="History">History</option>
+                </select>
             </div>
-
-            <!-- Course 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-calculator course-icon"></i>
-                        <h3 class="mb-0">Biology</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
+            <div class="filter-option">
+                <label for="semester">Semester:</label>
+                <select id="semester" class="form-control">
+                    <option value="">All Semesters</option>
+                    <option value="semester-1">Semester 1</option>
+                    <option value="semester-2">Semester 2</option>
+                    <option value="semester-3">Semester 3</option>
+                </select>
             </div>
-
-            <!-- Course 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-lightbulb course-icon"></i>
-                        <h3 class="mb-0">Physics</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">In-depth resources on mechanics, thermodynamics, electromagnetism, and quantum physics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
+            <div class="filter-option">
+                <label for="course">Course:</label>
+                <select id="course" class="form-control">
+                    <option value="">All Courses</option>
+                    <option value="course-1">Course 1</option>
+                    <option value="course-2">Course 2</option>
+                    <option value="course-3">Course 3</option>
+                </select>
             </div>
         </div>
-         <div class="row">
-            <!-- Course 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-code-slash course-icon"></i>
-                        <h3 class="mb-0">Mathematics</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
+        <div class="main-content">
+            <div class="card">
+                <div class="icon">&#128220;</div>
+                <div class="details">
+                    <h4>Mathematics</h4>
+                    <h4>Course 3</h4>
+                    <p>Calculus I - Unit 1</p>
+                    <button class="download-btn">Download</button>
                 </div>
             </div>
-
-            <!-- Course 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-calculator course-icon"></i>
-                        <h3 class="mb-0">Mathematics</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
+            <div class="card">
+                <div class="icon">&#128214;</div>
+                <div class="details">
+                    <h4>Biology</h4>
+                    <p>Cell Biology - Unit 2</p>
+                    <button class="download-btn">Download</button>
                 </div>
             </div>
-
-            <!-- Course 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-lightbulb course-icon"></i>
-                        <h3 class="mb-0">History</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">In-depth resources on mechanics, thermodynamics, electromagnetism, and quantum physics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
+            <div class="card">
+                <div class="icon">&#128196;</div>
+                <div class="details">
+                    <h4>Computer Science</h4>
+                    <p>Data Structures - Unit 3</p>
+                    <button class="download-btn">Download</button>
                 </div>
             </div>
+             <div class="card">
+                <div class="icon">&#128196;</div>
+                <div class="details">
+                    <h4>History</h4>
+                    <p>Data Structures - Unit 3</p>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+             <div class="card">
+                <div class="icon">&#128196;</div>
+                <div class="details">
+                    <h4>Computer Science</h4>
+                    <p>Data Structures - Unit 3</p>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+             <div class="card">
+                <div class="icon">&#128196;</div>
+                <div class="details">
+                    <h4>History</h4>
+                    <p>Data Structures - Unit 3</p>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">&#128196;</div>
+                <div class="data-semester" data-semester="semester-1">
+                    <h4>physics</h4>
+                    <p>Data Structures - Unit 3</p>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+            <!-- More cards can be added here -->
         </div>
-         <div class="row">
-            <!-- Course 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-code-slash course-icon"></i>
-                        <h3 class="mb-0">Geography</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Comprehensive resources covering programming, algorithms, and software development principles.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-calculator course-icon"></i>
-                        <h3 class="mb-0">Computer</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Detailed notes and tutorials on calculus, algebra, statistics, and applied mathematics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card course-card">
-                    <div class="card-header">
-                        <i class="bi bi-lightbulb course-icon"></i>
-                        <h3 class="mb-0">Business</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">In-depth resources on mechanics, thermodynamics, electromagnetism, and quantum physics.</p>
-                        <button class="btn btn-primary w-100" onclick="showUnits(this)">Select Course</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-              <footer class="footer py-5">
+    </div>
+    <div class="empty-state" style="display:none;">
+        <img src="https://via.placeholder.com/200x200?text=No+Notes+Found" alt="No Notes Found">
+        <p>No notes found matching your criteria.</p>
+    </div>
+   <footer class="footer py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -428,7 +399,51 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Downloading: ' + this.parentElement.querySelector('h4').innerText);
+            });
+        });
+
+        const filterOptions = document.querySelectorAll('.filter-option select');
+        filterOptions.forEach(option => {
+            option.addEventListener('change', function() {
+                const subject = document.getElementById('subject').value;
+                const semester = document.getElementById('semester').value;
+                const course = document.getElementById('course').value;
+
+                const cards = document.querySelectorAll('.card');
+                let hasVisibleCard = false;
+
+                cards.forEach(card => {
+                    const cardSubject = card.querySelector('.details h4').innerText.toLowerCase();
+                    const cardSemester = card.getAttribute('data-semester h4') || '';
+                    const cardCourse = card.getAttribute('data-course') || '';
+
+                    if ((subject === '' || cardSubject.includes(subject.toLowerCase())) &&
+                        (semester === '' || cardSemester === semester) &&
+                        (course === '' || cardCourse === course)) {
+                        card.style.display = 'block';
+                        hasVisibleCard = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                const emptyState = document.querySelector('.empty-state');
+                if (!hasVisibleCard) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            });
+        });
+    </script>
     <script src="files/js/bootstrap.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     </body>
+</body>
 </html>
