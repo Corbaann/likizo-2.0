@@ -116,10 +116,9 @@
             padding: 20px;
             background: linear-gradient(135deg, #465c72 0%, #23233e 100%);
         }
-        .card .icon .image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+        .card .icon img {
+            width: 70px;
+            height: 70px;
         }
         .card .details {
             padding: 20px;
@@ -142,9 +141,10 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 200px;
         }
         .card .download-btn:hover {
-            background-color: #0066CC;
+            background-color: #065aae;
         }
         .empty-state {
             text-align: center;
@@ -237,7 +237,7 @@
                         <a class="nav-link" href="classes.html"><i class="bi bi-mortarboard"></i> Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notes.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
+                        <a class="nav-link" href="download.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tutorial2.html"><i class="bi bi-camera-video"></i> Tutorials</a>
@@ -259,7 +259,6 @@
             </div>
         </div>
         <div class="hero-wave"></div>
-        
     </section>
     <div class="container">
         <div class="sidebar">
@@ -275,63 +274,67 @@
                 </select>
             </div>
             <div class="filter-option">
-                <label for="semester">Form:</label>
+                <label for="semester">Semester:</label>
                 <select id="semester" class="form-control">
-                    <option value="">All Forms</option>
-                    <option value="semester-1">Form 1</option>
-                    <option value="semester-2">Form 2</option>
-                    <option value="semester-3">Form 3</option>
-                    <option value="semester-4">Form 4</option>
+                    <option value="">All Semesters</option>
+                    <option value="semester-1">Semester 1</option>
+                    <option value="semester-2">Semester 2</option>
+                    <option value="semester-3">Semester 3</option>
                 </select>
             </div>
-           
+            <div class="filter-option">
+                <label for="course">Course:</label>
+                <select id="course" class="form-control">
+                    <option value="">All Courses</option>
+                    <option value="course-1">Course 1</option>
+                    <option value="course-2">Course 2</option>
+                    <option value="course-3">Course 3</option>
+                </select>
+            </div>
         </div>
         <div class="main-content">
             <div class="card">
-                 <div class="icon">&#128196;</div>
-                <div class="details">
+                <div class="icon"><img class="image" src="images/edu icon.svg" alt=""></div>
+                <div class="details" data-semester="semester-1" data-course="course-1">
                     <h4>Mathematics</h4>
-                    <h5>Form 1 </h5>
                     <p>Calculus I - Unit 1</p>
                     <button class="download-btn">Download</button>
                 </div>
             </div>
             <div class="card">
-                <div class="icon">&#128214;</div>
+               <div class="icon"><img class="image" src="images/calculator.svg" alt=""></div>
                 <div class="details">
                     <h4>Biology</h4>
-                     <h5>Form 2 </h5>
                     <p>Cell Biology - Unit 2</p>
                     <button class="download-btn">Download</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="icon">&#128196;</div>
+           <div class="card">
+                <div class="icon"><img class="image" src="images/globe-asia-australia.svg" alt=""></div>
                 <div class="details">
-                    <h4>Computer Science</h4>
-                     <h5>Form 2 </h5>
+                    <h4>computer-science</h4>
                     <p>Data Structures - Unit 3</p>
                     <button class="download-btn">Download</button>
                 </div>
             </div>
              <div class="card">
-                <div class="icon">&#128196;</div>
+                <div class="icon"><img class="image" src="images/globe-asia-australia.svg" alt=""></div>
                 <div class="details">
                     <h4>History</h4>
                     <p>Data Structures - Unit 3</p>
                     <button class="download-btn">Download</button>
                 </div>
             </div>
-             <div class="card">
-                <div class="icon">&#128196;</div>
+              <div class="card">
+                <div class="icon"><img class="image" src="images/globe-asia-australia.svg" alt=""></div>
                 <div class="details">
-                    <h4>Computer Science</h4>
+                    <h4>computer-science</h4>
                     <p>Data Structures - Unit 3</p>
                     <button class="download-btn">Download</button>
                 </div>
             </div>
              <div class="card">
-                <div class="icon">&#128196;</div>
+                <div class="icon"><img class="image" src="images/journal-text.svg" alt=""></div>
                 <div class="details">
                     <h4>History</h4>
                     <p>Data Structures - Unit 3</p>
@@ -397,43 +400,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Replace the static notes array with API call
-async function fetchNotes() {
-  const subject = document.getElementById('subject').value;
-  const form = document.getElementById('form').value;
-  const course = document.getElementById('course').value;
-  
-  let url = '/api/notes';
-  const params = new URLSearchParams();
-  
-  if (subject) params.append('subject', subject);
-  if (form) params.append('form', form);
-  if (course) params.append('course', course);
-  
-  if (params.toString()) url += '?' + params.toString();
-  
-  try {
-    const response = await fetch(url);
-    const notes = await response.json();
-    renderNotes(notes);
-  } catch (error) {
-    console.error('Error fetching notes:', error);
-  }
-}
-
-// Update renderNotes to accept notes parameter
-function renderNotes(notes) {
-  const html = notes.map(note => createNoteCard(note)).join('');
-  notesGrid.innerHTML = html || '<div class="no-results">No notes found matching your filters.</div>';
-}
-
-// Update filter event listeners
-subjectSelect.addEventListener('change', fetchNotes);
-formSelect.addEventListener('change', fetchNotes);
-courseSelect.addEventListener('change', fetchNotes);
-
-// Initial load
-fetchNotes();
         document.querySelectorAll('.download-btn').forEach(button => {
             button.addEventListener('click', function() {
                 alert('Downloading: ' + this.parentElement.querySelector('h4').innerText);
@@ -445,14 +411,12 @@ fetchNotes();
             option.addEventListener('change', function() {
                 const subject = document.getElementById('subject').value;
                 const semester = document.getElementById('semester').value;
-                const course = document.getElementById('course').value;
-
                 const cards = document.querySelectorAll('.card');
                 let hasVisibleCard = false;
 
                 cards.forEach(card => {
                     const cardSubject = card.querySelector('.details h4').innerText.toLowerCase();
-                   const cardSemester = card.getAttribute('.details h5') || '';
+                    const cardSemester = card.getAttribute('data-semester ') || '';
                     const cardCourse = card.getAttribute('data-course') || '';
 
                     if ((subject === '' || cardSubject.includes(subject.toLowerCase())) &&
@@ -475,7 +439,5 @@ fetchNotes();
         });
     </script>
     <script src="files/js/bootstrap.js"></script>
-    <script src="db.js"></script>
-    <script src="server.js"></script>
 </body>
 </html>

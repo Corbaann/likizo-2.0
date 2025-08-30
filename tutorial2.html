@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyHub - Download Study Notes</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="files/css/bootstrap.css">
-    <style>
-         :root {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter Notes</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="files/css/bootstrap.css">
+  <style>
+      :root {
             --primary-color: #4361ee;
             --secondary-color: #3f37c9;
             --accent-color: #4cc9f0;
@@ -23,14 +26,11 @@
             --tertiary-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             --quaternary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .navbar {
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+     .navbar {
            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -65,101 +65,62 @@
             color: black;
            
         }
-        .container {
-            display: flex;
-            margin: 20px;
-        }
-        .sidebar {
-            width: 250px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
-        }
-        .sidebar h3 {
-            margin-bottom: 15px;
-            color: #007BFF;
-        }
-        .sidebar .filter-option {
-            margin-bottom: 10px;
-        }
-        .sidebar .filter-option label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .sidebar .filter-option select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .main-content {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card .icon {
-            font-size: 48px;
-            color: #007BFF;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #465c72 0%, #23233e 100%);
-        }
-        .card .icon img {
-            width: 100px;
-            height: 100px;
-        }
-        .card .details {
-            padding: 20px;
-        }
-        .card .details h4 {
-            margin: 0 0 10px;
-            font-size: 18px;
-            color: #007BFF;
-        }
-        .card .details p {
-            margin: 0 0 15px;
-            color: #555;
-        }
-        .card .download-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: rgb(155, 6, 6);
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 200px;
-        }
-        .card .download-btn:hover {
-            background-color: red;
-        }
-        .empty-state {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .empty-state img {
-            max-width: 100%;
-            height: auto;
-        }
-        .empty-state p {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #555;
-        }
-        .footer {
+    .sidebar {
+      background-color: #ffffff;
+      border-right: 1px solid #e0e0e0;
+      padding: 20px;
+      height: 68vh;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-header {
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      height: 100px;
+    }
+    .card-body {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .btn-download {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .subject-title {
+      color: #007bff;
+      font-weight: 500;
+    }
+    .form-label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .dropdown-menu {
+      min-width: 200px;
+    }
+    .filter-section {
+      margin-bottom: 20px;
+    }
+    .card-img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .container-fluid {
+      padding: 0;
+    }
+       .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
             color: white;
         }
@@ -208,16 +169,8 @@
             border-radius: 2px;
             background: var(--primary-gradient);
         }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+        
+  </style>
 </head>
 <body>
    <nav class="navbar navbar-expand-lg navbar-dark">
@@ -237,7 +190,7 @@
                         <a class="nav-link" href="classes.html"><i class="bi bi-mortarboard"></i> Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="download.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
+                        <a class="nav-link" href="notes.html"><i class="bi bi-file-earmark-text"></i> Notes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tutorial2.html"><i class="bi bi-camera-video"></i> Tutorials</a>
@@ -259,106 +212,132 @@
             </div>
         </div>
         <div class="hero-wave"></div>
-        
     </section>
-    <div class="container">
-        <div class="sidebar">
-            <h3>Filter Notes</h3>
-            <div class="filter-option">
-                <label for="subject">Subject:</label>
-                <select id="subject" class="form-control">
-                    <option value="">All Subjects</option>
-                    <option value="mathematics">Mathematics</option>
-                    <option value="biology">Biology</option>
-                    <option value="computer-science">Computer Science</option>
-                      <option value="History">History</option>
-                </select>
-            </div>
-            <div class="filter-option">
-                <label for="semester">Semester:</label>
-                <select id="semester" class="form-control">
-                    <option value="">All Semesters</option>
-                    <option value="semester-1">Semester 1</option>
-                    <option value="semester-2">Semester 2</option>
-                    <option value="semester-3">Semester 3</option>
-                </select>
-            </div>
-            <div class="filter-option">
-                <label for="course">Course:</label>
-                <select id="course" class="form-control">
-                    <option value="">All Courses</option>
-                    <option value="course-1">Course 1</option>
-                    <option value="course-2">Course 2</option>
-                    <option value="course-3">Course 3</option>
-                </select>
-            </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-3 sidebar">
+        <h3 class="text-primary mb-4">Filter Notes</h3>
+
+        <div class="filter-section">
+          <label for="subject-select" class="form-label">Subject:</label>
+          <select id="subject-select" class="form-control">
+            <option value="all">All Subjects</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Biology">Biology</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="History">History</option>
+          </select>
         </div>
-        <div class="main-content">
-            <div class="card">
-                <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>Mathematics</h4>
-                    <h4>Course 3</h4>
-                    <p>Calculus I - Unit 1</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-            <div class="card">
-               <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>Biology</h4>
-                    <p>Cell Biology - Unit 2</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-            <div class="card">
-                 <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>Computer Science</h4>
-                    <p>Data Structures - Unit 3</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-             <div class="card">
-                <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>History</h4>
-                    <p>Data Structures - Unit 3</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-             <div class="card">
-               <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>Computer Science</h4>
-                    <p>Data Structures - Unit 3</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-             <div class="card">
-                <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="details">
-                    <h4>History</h4>
-                    <p>Data Structures - Unit 3</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-            <div class="card">
-                 <div class="icon"><img class="image" src="images/youtube.svg" alt=""></div>
-                <div class="data-semester" data-semester="semester-1">
-                    <h4>physics</h4>
-                    <p>Data Structures - Unit 3</p>
-                    <button class="download-btn">Watch</button>
-                </div>
-            </div>
-            <!-- More cards can be added here -->
+
+        <div class="filter-section">
+          <label for="form-select" class="form-label">Form:</label>
+          <select id="form-select" class="form-control">
+            <option value="all">All Forms</option>
+            <option value="Form 1">Form 1</option>
+            <option value="Form 2">Form 2</option>
+          </select>
         </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9 col-lg-9">
+        <div class="row g-4" id="notes-container">
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-file-alt fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">Mathematics</h5>
+                <p class="mb-1"><strong>Form 1</strong></p>
+                <p class="text-muted small">Calculus I - Unit 1</p>
+                <button class="btn btn-primary btn-download">Watch</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-book fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">Biology</h5>
+                <p class="mb-1"><strong>Form 2</strong></p>
+                <p class="text-muted small">Cell Biology - Unit 2</p>
+                <button class="btn btn-primary btn-download">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-file-alt fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">Computer Science</h5>
+                <p class="mb-1"><strong>Form 2</strong></p>
+                <p class="text-muted small">Data Structures - Unit 3</p>
+                <button class="btn btn-primary btn-download">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-file-alt fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">History</h5>
+                <p class="mb-1"><strong>Data Structures - Unit 3</strong></p>
+                <p class="text-muted small">Data Structures - Unit 3</p>
+                <button class="btn btn-primary btn-download">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-file-alt fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">Computer Science</h5>
+                <p class="mb-1"><strong>Data Structures - Unit 3</strong></p>
+                <p class="text-muted small">Data Structures - Unit 3</p>
+                <button class="btn btn-primary btn-download">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-file-alt fa-3x text-white"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="subject-title">History</h5>
+                <p class="mb-1"><strong>Data Structures - Unit 3</strong></p>
+                <p class="text-muted small">Data Structures - Unit 3</p>
+                <button class="btn btn-primary btn-download">Download</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="empty-state" style="display:none;">
-        <img src="https://via.placeholder.com/200x200?text=No+Notes+Found" alt="No Notes Found">
-        <p>No notes found matching your criteria.</p>
-    </div>
-   <footer class="footer py-5">
+  </div>
+ <footer class="footer py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -404,51 +383,41 @@
             </div>
         </div>
     </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="files/js/bootstrap.js"></script>
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const subjectSelect = document.getElementById('subject-select');
+      const formSelect = document.getElementById('form-select');
+      const cards = document.querySelectorAll('.card');
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.querySelectorAll('.download-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Downloading: ' + this.parentElement.querySelector('h4').innerText);
-            });
+      function filterCards() {
+        const subject = subjectSelect.value;
+        const form = formSelect.value;
+
+        cards.forEach(card => {
+          const subjectTitle = card.querySelector('.subject-title').textContent;
+          const formText = card.querySelector('p strong').textContent;
+
+          const matchesSubject = subject === 'all' || subjectTitle === subject;
+          const matchesForm = form === 'all' || formText === form;
+
+          if (matchesSubject && matchesForm) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
         });
+      }
 
-        const filterOptions = document.querySelectorAll('.filter-option select');
-        filterOptions.forEach(option => {
-            option.addEventListener('change', function() {
-                const subject = document.getElementById('subject').value;
-                const semester = document.getElementById('semester').value;
-                const course = document.getElementById('course').value;
+      subjectSelect.addEventListener('change', filterCards);
+      formSelect.addEventListener('change', filterCards);
 
-                const cards = document.querySelectorAll('.card');
-                let hasVisibleCard = false;
-
-                cards.forEach(card => {
-                    const cardSubject = card.querySelector('.details h4').innerText.toLowerCase();
-                    const cardSemester = card.getAttribute('data-semester h4') || '';
-                    const cardCourse = card.getAttribute('data-course') || '';
-
-                    if ((subject === '' || cardSubject.includes(subject.toLowerCase())) &&
-                        (semester === '' || cardSemester === semester) &&
-                        (course === '' || cardCourse === course)) {
-                        card.style.display = 'block';
-                        hasVisibleCard = true;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                const emptyState = document.querySelector('.empty-state');
-                if (!hasVisibleCard) {
-                    emptyState.style.display = 'block';
-                } else {
-                    emptyState.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    <script src="files/js/bootstrap.js"></script>
+      // Initialize with all visible
+      filterCards();
+    });
+  </script>
 </body>
 </html>
